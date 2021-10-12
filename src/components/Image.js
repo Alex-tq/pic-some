@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react"
+import React, {useContext} from "react"
 import PropTypes from "prop-types"
 
 import {Context} from "../Context"
@@ -30,7 +30,7 @@ function Image({className, img}) {
             className={`${className} image-container`}
             ref={ref}
         >
-            <img src={img.url} className="image-grid"/>
+            <img src={img.url} className="image-grid" alt=''/>
             {heartIcon()}
             {cartIcon()}
         </div>
