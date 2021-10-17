@@ -7,7 +7,7 @@ import {ContextProvider} from './Context'
 
 ReactDOM.render(
   <ContextProvider>
-    <Router>
+    <Router basename="/pic-some">
       <App />
     </Router>
   </ContextProvider>,
