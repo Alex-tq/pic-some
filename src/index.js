@@ -7,7 +7,7 @@ import {ContextProvider} from './Context'
 
 ReactDOM.render(
   <ContextProvider>
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router basename="/pic-some">
       <App />
     </Router>
   </ContextProvider>,
