@@ -1,3 +1,5 @@
+Click [here](https://alex-tq.github.io/pic-some)to see the live website
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
