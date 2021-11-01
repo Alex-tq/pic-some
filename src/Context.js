@@ -8,10 +8,26 @@ function ContextProvider({children}) {
     
     const url = "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
     useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setAllPhotos(data))
+      
+        if(!localStorage.getItem('allPhotos')){
+            fetch(url)
+                .then(res => res.json())
+                .then(data => setAllPhotos(data))
+        }else{
+            setAllPhotos(JSON.parse(localStorage.getItem('allPhotos')))
+        }
+
+        if(localStorage.getItem('cartItems')){
+            setCartItems(JSON.parse(localStorage.getItem('cartItems')))
+        }
     }, [])
+    useEffect(()=>{
+        localStorage.setItem('cartItems', JSON.stringify(cartItems))
+    }, [cartItems])
+
+    useEffect(()=>{
+        localStorage.setItem('allPhotos', JSON.stringify(allPhotos))
+    }, [allPhotos])
     
     function toggleFavorite(id) {
         const updatedArr = allPhotos.map(photo => {
